@@ -1,0 +1,76 @@
+Deep-layer photon count (I_deep) for the measured guanine spectra -- 100mM_2
+====================================================================================================
+
+I_deep = (X_max - X_min)/10 * sum of the 216-point deep auxiliary head,
+computed with best_raman2_model.pt on Spectrum/Guanine/100mM_2_LaserRemoved.
+
+'paper' is the value Figure 10(d) of the manuscript reports at the same
+acquisition time, as supplied by the authors.
+Refitting those points gives I(t) = 16788 t + 178181, R^2 = 0.9935,
+matching the R^2 = 0.9935 printed on the figure.
+
+NOTE: the published series and these spectra are different acquisitions of
+100 mM guanine, so the two columns are not expected to agree exactly.
+
+----------------------------------------------------------------------------------------------------
+file                              time_s  spec   I_deep_measured    I_deep_paper  paper/measured
+----------------------------------------------------------------------------------------------------
+Acquisition_10s_s1                    10     1          394833.3          320989            0.81
+Acquisition_10s_s2                    10     2          390984.0          320989            0.82
+Acquisition_10s_s3                    10     3          314838.6          320989            1.02
+Acquisition_10s_s4                    10     4          376093.1          320989            0.85
+Acquisition_10s_s5                    10     5          346145.8          320989            0.93
+Acquisition_20s_s1                    20     1          573475.4          546100            0.95
+Acquisition_20s_s2                    20     2          535461.9          546100            1.02
+Acquisition_20s_s3                    20     3          614506.2          546100            0.89
+Acquisition_20s_s4                    20     4          644665.6          546100            0.85
+Acquisition_20s_s5                    20     5          716425.2          546100            0.76
+Acquisition_30s_s1                    30     1         1004065.6          663494            0.66
+Acquisition_30s_s2                    30     2          740653.1          663494            0.90
+Acquisition_30s_s3                    30     3          812855.2          663494            0.82
+Acquisition_30s_s4                    30     4          884498.7          663494            0.75
+Acquisition_30s_s5                    30     5          760939.8          663494            0.87
+Acquisition_40s_s1                    40     1         1001804.2          881322            0.88
+Acquisition_40s_s2                    40     2         1021016.0          881322            0.86
+Acquisition_40s_s3                    40     3         1089050.5          881322            0.81
+Acquisition_40s_s4                    40     4          960519.7          881322            0.92
+Acquisition_40s_s5                    40     5         1016269.1          881322            0.87
+Acquisition_50s_s1                    50     1         1323566.7         1006213            0.76
+Acquisition_50s_s2                    50     2         1313860.6         1006213            0.77
+Acquisition_50s_s3                    50     3         1002476.6         1006213            1.00
+Acquisition_50s_s4                    50     4         1199809.8         1006213            0.84
+Acquisition_50s_s5                    50     5         1257985.7         1006213            0.80
+Acquisition_60s_s1                    60     1         1365802.5         1176550            0.86
+Acquisition_60s_s2                    60     2         1295611.6         1176550            0.91
+Acquisition_60s_s3                    60     3         1460519.1         1176550            0.81
+Acquisition_60s_s4                    60     4         1449181.7         1176550            0.81
+Acquisition_60s_s5                    60     5         1583207.9         1176550            0.74
+----------------------------------------------------------------------------------------------------
+
+Per acquisition time, mean over the five spectra
+----------------------------------------------------------------------------------------------------
+  time_s   measured_mean   measured_sd    RSD_%         paper  paper/measured
+----------------------------------------------------------------------------------------------------
+      10        364579.0       33760.2     9.26        320989            0.88
+      20        616906.9       69281.6    11.23        546100            0.89
+      30        840602.5      106949.8    12.72        663494            0.79
+      40       1017731.9       46438.6     4.56        881322            0.87
+      50       1219539.9      131055.1    10.75       1006213            0.83
+      60       1430864.5      108339.6     7.57       1176550            0.82
+----------------------------------------------------------------------------------------------------
+
+Test of the proportionality asserted in SI Section S9.3, I(t) = k t
+----------------------------------------------------------------------------------------------------
+Each series is anchored on its own 60 s value and scaled by t/60; the
+deviation is what an experimenter would incur by substituting a short
+acquisition for a long one and scaling by the exposure ratio.
+
+  time_s    paper_actual   paper_if_prop     dev_%     meas_actual    meas_if_prop     dev_%
+----------------------------------------------------------------------------------------------------
+      10          320989          196092      63.7        364579.0          238477      52.9
+      20          546100          392183      39.2        616906.9          476955      29.3
+      30          663494          588275      12.8        840602.5          715432      17.5
+      40          881322          784366      12.4       1017731.9          953910       6.7
+      50         1006213          980458       2.6       1219539.9         1192387       2.3
+      60         1176550         1176550       0.0       1430864.5         1430865       0.0
+----------------------------------------------------------------------------------------------------

@@ -1,0 +1,63 @@
+Limit of detection for the deep-layer readout
+============================================================================================
+
+LOD = 3 * sigma / S, with sigma the standard deviation of I_deep over blank
+wells and S the slope of the guanine concentration calibration.
+
+--------------------------------------------------------------------------------------------
+blank file                  spec          I_deep   median counts          span
+--------------------------------------------------------------------------------------------
+#0   Acquisition.asc           1          6044.4           51739         11929
+#1   Acquisition.asc           1          5450.4           51590         11924
+#2   Acquisition.asc           1          4606.3           51632         11966
+#3   Acquisition.asc           1          2970.4           51354         11421
+#4   Acquisition.asc           1          6314.0           51152          9406
+#5   Acquisition.asc           1          5125.5           51680         12155
+#6   Acquisition.asc           1          2714.3           51473         12301
+#7   Acquisition.asc           1          8259.7           51044         11273
+#8   Acquisition.asc           1          3618.1           51301         11921
+#9   Acquisition.asc           1          6968.9           51235         11356
+--------------------------------------------------------------------------------------------
+n = 10 blanks
+mean I_deep  = 5,207.2
+sigma (SD)   = 1,780.1
+RSD          = 34.18%
+relative uncertainty on sigma at n=10: +/- 24%
+--------------------------------------------------------------------------------------------
+
+LIMIT OF DETECTION
+--------------------------------------------------------------------------------------------
+
+    LOD = 3 sigma / S
+
+where sigma is the standard deviation of the blank response and S is the
+sensitivity, the slope of the response against concentration. The factor of
+three corresponds to a confidence level of approximately 99% for a normally
+distributed blank [Long and Winefordner, Anal. Chem. 1983, 55, 712A-724A;
+Currie, Pure Appl. Chem. 1995, 67, 1699-1723].
+
+    sigma = 1,780.1 counts   (n = 10 blanks)
+    S     = 1,259.1 counts per mM
+
+    LOD   = 3 x 1,780.1 / 1,259.1 = 4.2 mM
+
+The lowest calibration standard, 20 mM, is 4.7 times the
+detection limit.
+--------------------------------------------------------------------------------------------
+
+Condition check: were the blanks acquired like the samples?
+--------------------------------------------------------------------------------------------
+                     median counts            span
+blanks                       51420           11565
+20 mM sample                 51354           12642
+30 mM sample                 52442           22010
+40 mM sample                 52864           25148
+50 mM sample                 53056           34583
+60 mM sample                 53016           44465
+70 mM sample                 52931           51124
+80 mM sample                 53031           59725
+--------------------------------------------------------------------------------------------
+A blank at a comparable background level and span was acquired under
+comparable conditions; the span rises with concentration because the
+analyte signal itself contributes to X_max.
+--------------------------------------------------------------------------------------------
