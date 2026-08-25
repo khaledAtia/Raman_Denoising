@@ -1,0 +1,10 @@
+# Python 3.12.7
+#
+# The versions below are those the reported results were produced with. torch is
+# listed without its CUDA build tag; install the wheel matching your own CUDA
+# version from https://pytorch.org. All results in the paper were produced on a
+# single NVIDIA RTX 5070 Ti with torch 2.10.0+cu128.
+torch==2.10.0
+numpy==2.4.3
+scipy==1.17.1
+matplotlib==3.10.8

@@ -1,0 +1,43 @@
+{
+  "n_points": 864,
+  "warmup": 10,
+  "iters": 50,
+  "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "rows": [
+    {
+      "method": "dual-branch (this work)",
+      "params": 5168630,
+      "passes": 1,
+      "gpu_b1_ms": 13.17,
+      "gpu_plate_ms": 155.656,
+      "cpu_b1_ms": 24.001,
+      "cpu_plate_ms": 609.922
+    },
+    {
+      "method": "dual-branch, plain encoder",
+      "params": 4639416,
+      "passes": 1,
+      "gpu_b1_ms": 7.057,
+      "gpu_plate_ms": 113.534,
+      "cpu_b1_ms": 13.806,
+      "cpu_plate_ms": 357.788
+    },
+    {
+      "method": "cascaded U-Net",
+      "params": 5888130,
+      "passes": 2,
+      "gpu_b1_ms": 5.615,
+      "gpu_plate_ms": 42.471,
+      "cpu_b1_ms": 14.39,
+      "cpu_plate_ms": 325.624
+    },
+    {
+      "method": "airPLS + Savitzky-Golay",
+      "params": null,
+      "passes": null,
+      "cpu_b1_ms": 1.37,
+      "cpu_plate_ms": 65.65
+    }
+  ],
+  "gpu_state_at_measurement": "1950 MHz, 3090 MHz, 75"
+}
